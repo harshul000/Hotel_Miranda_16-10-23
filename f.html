@@ -123,8 +123,8 @@
     document.addEventListener('DOMContentLoaded', function () {
       // Populate Form 2 with values from the query parameters
       const params = new URLSearchParams(window.location.search);
-      document.getElementById('name').value = params.get('name') || '';
-      document.getElementById('email').value = params.get('email') || '';
+      document.getElementById('checkin').value = params.get('name') || '';
+      document.getElementById('checkout').value = params.get('email') || '';
       document.getElementById('contact').value = params.get('contact') || '';
       
     });
