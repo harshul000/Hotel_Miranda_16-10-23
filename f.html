@@ -104,6 +104,10 @@
       <label for="guests">Number of Guests:</label>
       <input type="number" name="guests" id="guests" min="1" required>
 
+      <div class="checkbox-label">
+        <input type="checkbox" name="cottage" id="cottage">
+        <label for="cottage">Cottage near pool area</label>
+      </div>
 
       <label for="specialRequest">Special Requests:</label>
       <textarea name="specialRequest" id="specialRequest" rows="4"></textarea>
@@ -114,5 +118,16 @@
     </form>
   </div>
 
+    
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Populate Form 2 with values from the query parameters
+      const params = new URLSearchParams(window.location.search);
+      document.getElementById('name').value = params.get('name') || '';
+      document.getElementById('email').value = params.get('email') || '';
+      document.getElementById('contact').value = params.get('contact') || '';
+      
+    });
+</script>
 </body>
 </html>
