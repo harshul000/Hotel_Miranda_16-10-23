@@ -55,25 +55,39 @@
       </div>
     </header>
 
-    <section class="booking">
-      <div class="section__container booking__container">
-        <form action="/">
-          <div class="input__group">
-            <label for="arrival">Arrival Date</label>
-            <input type="text" placeholder="Your Arrival Date" />
-          </div>
-          <div class="input__group">
-            <label for="departure">Departure Date</label>
-            <input type="text" placeholder="Your Departure Date" />
-          </div>
-          <div class="input__group">
-            <label for="guests">Guests</label>
-            <input type="text" placeholder="No Of Guests" />
-          </div>
-          <button class="btn">Check Availability</button>
-        </form>
-      </div>
-    </section>
+   <section class="booking">
+    <div class="section__container booking__container">
+        <form action="form2.html" method="GET" id="firstForm" onsubmit="submitForm(event)">
+        <div class="input__group">
+          <label for="arrival">Arrival Date</label>
+          <input type="text" name="arrival" placeholder="Your Arrival Date" />
+        </div>
+        <div class="input__group">
+          <label for="departure">Departure Date</label>
+          <input type="text"name="departure" placeholder="Your Departure Date" />
+        </div>
+        <div class="input__group">
+          <label for="guests">Guests</label>
+          <input type="text" name="guests"placeholder="No Of Guests" />
+        </div>
+        <button class="btn">Check Availability</button>
+      </form>
+    </div>
+    <script>
+        function submitForm(event) {
+          event.preventDefault();
+    
+          const form = document.getElementById('firstForm');
+          const name = form.elements['arrival'].value;
+          const email = form.elements['departure'].value;
+          const contact = form.elements['guests'].value;
+        
+    
+          window.location.href = `f.html?name=${name}&email=${email}&contact=${contact}`;
+        }
+      </script>
+  </section>
+
 
     <section class="about" id="about">
       <div class="section__container about__container">
